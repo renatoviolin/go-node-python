@@ -4,17 +4,17 @@ This repository implements the same web service using Go, Javascript (Node) and 
 
 The goal is simple: see how much requests each service can handle, but not only in a "hello world" response, but in scenarios that are more common for a backend application, such as json reponses and query a database. To do this, each service has three endpoints:
 
-#### /hello
+### /hello
 Return a simple "hello world" response text.
 Expected result: the fastest endpoint, as it only return a string "hello world".
 
-#### /single_json
+### /single_json
 Return a average sized json object. 
 
 The goal here is to see the capabilities of each langague/framework to deal with json response.
 Expected result: Slower them the previous endpoint, as it need to parse a json file and attach to response.
 
-#### /mongo_json
+### /mongo_json
 Return 10 rows of the same json object as the previous endpoint.
 
 The goal here is to see how the driver/connector implementation influences the number of requests per second.
