@@ -24,11 +24,11 @@ func (h *GinHandler) SetupAndRun(address string) {
 		ctx.String(http.StatusOK, "hello world")
 	})
 
-	h.gin.GET("/json", func(ctx *gin.Context) {
+	h.gin.GET("/single_json", func(ctx *gin.Context) {
 		ctx.JSON(http.StatusOK, dto.NewPayload())
 	})
 
-	h.gin.GET("/mongo", func(ctx *gin.Context) {
+	h.gin.GET("/mongo_json", func(ctx *gin.Context) {
 		result, err := h.uc.Execute()
 		if err != nil {
 			ctx.JSON(http.StatusInternalServerError, err.Error())

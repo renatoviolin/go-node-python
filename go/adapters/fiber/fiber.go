@@ -28,11 +28,11 @@ func (h *FiberHandler) SetupAndRun(address string) {
 		return c.SendString("hello world")
 	})
 
-	h.fiber.Get("/json", func(c *fiber.Ctx) error {
+	h.fiber.Get("/single_json", func(c *fiber.Ctx) error {
 		return c.JSON(dto.NewPayload())
 	})
 
-	h.fiber.Get("/mongo", func(c *fiber.Ctx) error {
+	h.fiber.Get("/mongo_json", func(c *fiber.Ctx) error {
 		result, err := h.uc.Execute()
 		if err != nil {
 			return c.JSON(err.Error())

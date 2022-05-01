@@ -28,12 +28,12 @@ func (h *ChiHandler) SetupAndRun(address string) {
 		w.Write([]byte("hello world"))
 	})
 
-	h.chi.Get("/json", func(w http.ResponseWriter, r *http.Request) {
+	h.chi.Get("/single_json", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Add("Content-Type", "application/json")
 		json.NewEncoder(w).Encode(dto.NewPayload())
 	})
 
-	h.chi.Get("/mongo", func(w http.ResponseWriter, r *http.Request) {
+	h.chi.Get("/mongo_json", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Add("Content-Type", "application/json")
 		result, err := h.uc.Execute()
 		if err != nil {
