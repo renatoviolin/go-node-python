@@ -17,8 +17,8 @@ const fastify = require('fastify')({
 });
 
 fastify.get('/hello', helloWorld)
-fastify.get('/json', singleJson)
-fastify.get('/mongo', getAll)
+fastify.get('/single_json', singleJson)
+fastify.get('/mongo_json', getAll)
 
 
 // Run the server!

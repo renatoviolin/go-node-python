@@ -15,8 +15,8 @@ app.use(express.json())
 
 // =================================
 app.get('/hello', helloWorld)
-app.get('/json', singleJson)
-app.get('/mongo', getAll)
+app.get('/single_json', singleJson)
+app.get('/mongo_json', getAll)
 
 if (cluster.isMaster) {
   console.log('Master cluster setting up ' + numWorkers + ' workers...');
