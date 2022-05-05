@@ -1,4 +1,4 @@
-use serde::{Serialize, Deserialize};
+use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize)]
 pub struct Payload {
@@ -7,7 +7,7 @@ pub struct Payload {
     field3: String,
     field4: String,
     field5: String,
-    detail: Vec<PayloadDetail>
+    detail: Vec<PayloadDetail>,
 }
 
 #[derive(Serialize, Deserialize)]
