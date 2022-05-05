@@ -62,6 +62,6 @@ pub async fn run(port: u16) {
 
     let routes = hello.or(single_json);
 
-    println!("Warp server listening on http://localhost:{}", port);
+    println!("Warp server listening on http://localhost:{port}");
     warp::serve(routes).run(([127, 0, 0, 1], port)).await;
 }
